@@ -2,7 +2,9 @@ import React from "react";
 import { Timeline } from "antd";
 
 const MessageList = ({ messages }) => (
-  <Timeline>{/* FIXME: render a <Timeline.Item> for each message */}</Timeline>
+  <Timeline>
+    {messages.map((message, index) => <Timeline.Item key={index}>{message.text}</Timeline.Item>)}
+  </Timeline>
 );
 
 export default MessageList;

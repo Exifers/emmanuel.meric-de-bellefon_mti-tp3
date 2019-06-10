@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
+import { withLogin } from '../hocs/withLogin'
 
 const MessageLayout = props => (
   <Layout style={{ height: "calc(100%)" }}>
@@ -12,7 +13,7 @@ const MessageLayout = props => (
         }}
       >
         <Layout.Content style={{ padding: "0 24px", height: "calc(80%)" }}>
-          Content
+          {props.renderContent()}
         </Layout.Content>
       </Layout>
     </Layout.Content>
@@ -23,9 +24,14 @@ const MessageLayout = props => (
         height: "calc(20%)"
       }}
     >
-      Write Message
+      {props.renderFooterContent()}
     </Layout.Footer>
   </Layout>
 );
 
-export default MessageLayout;
+MessageLayout.defaultProps = {
+  renderContent: () => null,
+  renderFooterContent: () => null
+}
+
+export default withLogin(MessageLayout);

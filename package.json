@@ -7,7 +7,7 @@
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
     "babel-jest": "^19.0.0",
-    "babel-loader": "^6.3.2",
+    "babel-loader": "^7.1.5",
     "babel-preset-react-app": "^2.1.1",
     "case-sensitive-paths-webpack-plugin": "1.1.4",
     "chalk": "1.1.3",
